@@ -74,5 +74,25 @@ const students = [
 ];
 
 const graduatedStudents = (listOfStudents) => {
-//Implement function
+  //Implement function
+  const result = [];
+  for (const student of listOfStudents) {
+    const { name, age, grade, email, phone, graduated } = student;
+    if (graduated) {
+      const str = `${name} has graduated and their diploma will be sent to ${email}.`;
+      result.push(str);
+    } else {
+      const str1 = `${name} has not graduated yet, no diploma will be sent.`;
+      result.push(str1);
+    }
+  }
+  return result;
 };
+
+//Output
+console.log(graduatedStudents(students));
+// [
+//   ‘Ankit has graduated and their diploma will be sent to [email protected].’,
+//   ‘Kayla has not graduated yet, no diploma will be sent.’,
+//   ‘Charina has graduated and their diploma will be sent to [email protected].’
+// ]
